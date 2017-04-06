@@ -67,31 +67,25 @@
 
 
 <script type="text/javascript">
- function scan(){
- console.log("clicked");
- if (!navigator.camera) {
-      alert("Camera API not supported", "Error");
-      return;
-  }
-  var options =   {   quality: 50,
-                      destinationType: Camera.DestinationType.DATA_URL,
-                      sourceType: 1,      // 0:Photo Library, 1=Camera, 2=Saved Album
-                      encodingType: 0     // 0=JPG 1=PNG
-                  };
+ function cameraTakePicture() {
+   navigator.camera.getPicture(onSuccess, onFail, { 
+      quality: 50,
+      destinationType: Camera.DestinationType.DATA_URL
+   });
 
-  navigator.camera.getPicture(
-      function(imgData) {
-          $('.media-object', this.$el).attr('src', "data:image/jpeg;base64,"+imgData);
-      },
-      function() {
-          alert('Error taking picture', 'Error');
-      },
-      options);
- }
+   function onSuccess(imageData) {
+      var image = document.getElementById('myImage');
+      image.src = "data:image/jpeg;base64," + imageData;
+   }
+
+   function onFail(message) {
+      alert('Failed because: ' + message);
+   }
+}
  </script>
 
 
 <h3>BAR CODE SCANNER</h3>
- <button onclick="scan()">SCAN</button>
+ <button onclick="cameraTakePicture()">SCAN</button>
   </body>
 </html>
