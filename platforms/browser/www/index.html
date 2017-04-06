@@ -1,29 +1,160 @@
 <!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
 <html>
-  <head>
-    <title>Device Properties Example</title>
 
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script type="text/javascript" charset="utf-8">
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 
-    // Wait for device API libraries to load
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Hello World</title>
+</head>
 
-    // device APIs are available
-    //
-    function onDeviceReady() {
-        var element = document.getElementById('deviceProperties');
-        element.innerHTML = 'Device Model: '    + device.model    + '<br />' +
-                            'Device Cordova: '  + device.cordova  + '<br />' +
-                            'Device Platform: ' + device.platform + '<br />' +
-                            'Device UUID: '     + device.uuid     + '<br />' +
-                            'Device Version: '  + device.version  + '<br />';
-    }
-
+<body>
+    <div class="app">
+        <h1>PhoneGap</h1>
+        <div id="deviceready" class="blink">
+            <p class="event listening">Connecting to Device</p>
+            <p class="event received">Device is Ready</p>
+        </div>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript">
+        app.initialize();
     </script>
-  </head>
-  <body>
-    <p id="deviceProperties">Loading device properties...</p>
-  </body>
+
+
+    <script>
+  //var socket = io('http://localhost:8001');
+  var socket = io('http://demo.surabibullion.com:8001');
+  socket.on('feedxml', function (data) {
+         var feedDetails = '<li>Cheque bar buying rate - ' + data.chequebarbuyingrate + '</li>' +
+                        '<li>Cheque bar market selling rate- ' + data.chequebarmarketsellingrate + '</li>' +
+                        '<li>Cheque bar market selling rate -' + data.chequebarsellingrate + '</li>' +
+                        '<li>Cheque bar Ft buying rate- ' + data.chequeftbuyingrate + '</li>' +
+                        '<li>Cheque bar Ft market selling rate -' + data.chequeftmarketsellingrate + '</li>' +
+                        '<li>Cheque bar Ft selling rate- ' + data.chequeftsellingrate + '</li>' +
+                        '<li>Unfix buying rate -' + data.unfixbuyingrate + '</li>' +
+                        '<li>Unfix market selling rate- ' + data.unfixmarketsellingrate + '</li>' +
+                        '<li>Unfix selling rate -' + data.unfixsellingrate + '</li>' +
+                        '<li>Last updated date -' + data.lastupdate + '</li>' +
+                        '<li>gold_bid-' + data.gold_bid + '</li>' +
+                        '<li>gold_ask-' + data.gold_ask + '</li>' +
+                        '<li>gold_ltp-' + data.gold_ltp + '</li>' +
+                        '<li>lgd_gold_high-' + data.lgd_gold_high + '</li>' +
+                        '<li>lgd_gold_low-' + data.lgd_gold_low + '</li>' +
+                        '<li>silver_bid-' + data.silver_bid + '</li>' +
+                        '<li>silver_ask-' + data.silver_ask + '</li>' +
+                        '<li>silver_ltp-' + data.silver_ltp + '</li>' +
+                        '<li>silver_lgd_high-' + data.silver_lgd_high + '</li>' +
+                        '<li>silver_lgd_low-' + data.silver_lgd_low + '</li>' +
+                        '<li>inr_bid-' + data.inr_bid + '</li>' +
+                        '<li>inr_ask-' + data.inr_ask + '</li>' +
+                        '<li>inr_ltp-' + data.inr_ltp + '</li>' +
+                        '<li>inr_high-' + data.inr_high + '</li>' +
+                        '<li>inr_low-' + data.inr_low + '</li>' +
+                        '<li>marketopenrate_unifix-' + data.marketopenrate_unifix + '</li>' +
+                        '<li>marketopenrate ch_bar-' + data.marketopenrate_ch_bar + '</li>' +
+                        '<li>marketopenrate ch_ft-' + data.marketopenrate_ch_ft + '</li>' +
+//                        '<li>marketopenrate-' + data.marketopenrate + '</li>' +
+                        '<li>intraday market-' + data.intraday_market + '</li>' +
+                        '<li>marketstatus -' + data.marketstatus + '</li>' +
+                        '<li>Bar market-' + data.bar_market + '</li>' +
+                        '<li>Ft market-' + data.ft_market + '</li>' +
+                        '<li>Unifix market-' + data.unifix_market + '</li>'+
+                        '<li>Auto order approval limit- ' + data.autoorderapplimit + '</li>' +
+                        '<li>Auto order approval variable- ' + data.autoordervariable + '</li>';
+                jQuery('#messages').html(feedDetails);
+           // document.getElementById("messages").innerHTML=feedDetails;
+  });
+  
+
+function cameraTakePicture() {
+   navigator.camera.getPicture(onSuccess, onFail, { 
+      quality: 50,
+      destinationType: Camera.DestinationType.DATA_URL
+   });
+
+   function onSuccess(imageData) {
+      var image = document.getElementById('myImage');
+      image.src = "data:image/jpeg;base64," + imageData;
+   }
+
+   function onFail(message) {
+      alert('Failed because: ' + message);
+   }
+}
+
+function barcodeRead(){
+    cordova.plugins.barcodeScanner.scan(
+      function (result) {
+          alert("We got a barcode\n" +
+                "Result: " + result.text + "\n" +
+                "Format: " + result.format + "\n" +
+                "Cancelled: " + result.cancelled);
+      },
+      function (error) {
+          alert("Scanning failed: " + error);
+      },
+      {
+          preferFrontCamera : true, // iOS and Android
+          showFlipCameraButton : true, // iOS and Android
+          showTorchButton : true, // iOS and Android
+          torchOn: true, // Android, launch with the torch switched on (if available)
+          prompt : "Place a barcode inside the scan area", // Android
+          resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
+          formats : "QR_CODE,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
+          orientation : "landscape", // Android only (portrait|landscape), default unset so it rotates with the device
+          disableAnimations : true, // iOS
+          disableSuccessBeep: false // iOS
+      }
+   );
+}
+
+</script>
+
+
+    <ul id="messages">Hello welcome </ul>
+<h3>BAR CODE SCANNER</h3>
+ <button onclick="cameraTakePicture()">Open Camera</button>
+ <button onclick="barcodeRead()">Bar Code Reader</button>
+
+</body>
+
 </html>
