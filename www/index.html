@@ -67,6 +67,13 @@
 
 
 <script type="text/javascript">
+
+document.addEventListener("backbutton", onBackKeyDown, false);
+
+function onBackKeyDown(e) {
+   e.preventDefault();
+   alert('Back Button is Pressed!');
+}
  function cameraTakePicture() {
    navigator.camera.getPicture(onSuccess, onFail, { 
       quality: 50,
