@@ -1,29 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <title>Device Properties Example</title>
-
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script type="text/javascript" charset="utf-8">
-
-    // Wait for device API libraries to load
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
-
-    // device APIs are available
-    //
-    function onDeviceReady() {
-        var element = document.getElementById('deviceProperties');
-        element.innerHTML = 'Device Model: '    + device.model    + '<br />' +
-                            'Device Cordova: '  + device.cordova  + '<br />' +
-                            'Device Platform: ' + device.platform + '<br />' +
-                            'Device UUID: '     + device.uuid     + '<br />' +
-                            'Device Version: '  + device.version  + '<br />';
-    }
-
-    </script>
+    <title>Socket.IO Feed test</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { font: 13px Helvetica, Arial; }
+      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
+      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
+      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+      #messages { list-style-type: none; margin: 0; padding: 0; }
+      #messages li { padding: 5px 10px; }
+      #messages li:nth-child(odd) { background: #eee; }
+    </style>
   </head>
   <body>
-    <p id="deviceProperties">Loading device properties...</p>
+    <ul id="messages">Hello welcome </ul>
+   
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script>
+  //var socket = io('http://localhost:8001');
+  var socket = io('http://demo.surabibullion.com:8001');
+  socket.on('feedxml', function (data) {
+         var feedDetails = '<li>Cheque bar buying rate - ' + data.chequebarbuyingrate + '</li>' +
+                        '<li>Cheque bar market selling rate- ' + data.chequebarmarketsellingrate + '</li>' +
+                        '<li>Cheque bar market selling rate -' + data.chequebarsellingrate + '</li>' +
+                        '<li>Cheque bar Ft buying rate- ' + data.chequeftbuyingrate + '</li>' +
+                        '<li>Cheque bar Ft market selling rate -' + data.chequeftmarketsellingrate + '</li>' +
+                        '<li>Cheque bar Ft selling rate- ' + data.chequeftsellingrate + '</li>' +
+                        '<li>Unfix buying rate -' + data.unfixbuyingrate + '</li>' +
+                        '<li>Unfix market selling rate- ' + data.unfixmarketsellingrate + '</li>' +
+                        '<li>Unfix selling rate -' + data.unfixsellingrate + '</li>' +
+                        '<li>Last updated date -' + data.lastupdate + '</li>' +
+                        '<li>gold_bid-' + data.gold_bid + '</li>' +
+                        '<li>gold_ask-' + data.gold_ask + '</li>' +
+                        '<li>gold_ltp-' + data.gold_ltp + '</li>' +
+                        '<li>lgd_gold_high-' + data.lgd_gold_high + '</li>' +
+                        '<li>lgd_gold_low-' + data.lgd_gold_low + '</li>' +
+                        '<li>silver_bid-' + data.silver_bid + '</li>' +
+                        '<li>silver_ask-' + data.silver_ask + '</li>' +
+                        '<li>silver_ltp-' + data.silver_ltp + '</li>' +
+                        '<li>silver_lgd_high-' + data.silver_lgd_high + '</li>' +
+                        '<li>silver_lgd_low-' + data.silver_lgd_low + '</li>' +
+                        '<li>inr_bid-' + data.inr_bid + '</li>' +
+                        '<li>inr_ask-' + data.inr_ask + '</li>' +
+                        '<li>inr_ltp-' + data.inr_ltp + '</li>' +
+                        '<li>inr_high-' + data.inr_high + '</li>' +
+                        '<li>inr_low-' + data.inr_low + '</li>' +
+                        '<li>marketopenrate_unifix-' + data.marketopenrate_unifix + '</li>' +
+                        '<li>marketopenrate ch_bar-' + data.marketopenrate_ch_bar + '</li>' +
+                        '<li>marketopenrate ch_ft-' + data.marketopenrate_ch_ft + '</li>' +
+//                        '<li>marketopenrate-' + data.marketopenrate + '</li>' +
+                        '<li>intraday market-' + data.intraday_market + '</li>' +
+                        '<li>marketstatus -' + data.marketstatus + '</li>' +
+                        '<li>Bar market-' + data.bar_market + '</li>' +
+                        '<li>Ft market-' + data.ft_market + '</li>' +
+                        '<li>Unifix market-' + data.unifix_market + '</li>'+
+                        '<li>Auto order approval limit- ' + data.autoorderapplimit + '</li>' +
+                        '<li>Auto order approval variable- ' + data.autoordervariable + '</li>';
+                jQuery('#messages').html(feedDetails);
+           // document.getElementById("messages").innerHTML=feedDetails;
+  });
+  
+</script>
   </body>
 </html>
