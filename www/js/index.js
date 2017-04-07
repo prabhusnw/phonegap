@@ -62,7 +62,7 @@ var app = {
                 localStorage.setItem('registrationId', data.registrationId);
                 // Post registrationId to your app server as the value has changed
             }
-            alert(data.device_token);
+            alert(data);
              var formData = {
                 'device_type': "2",
                 'device_token':data.device_token,
