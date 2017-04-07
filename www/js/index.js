@@ -63,7 +63,7 @@ var app = {
                 alert(data.registrationId);
                 // Post registrationId to your app server as the value has changed
             }
-
+alert(data.registrationId);
             var parentElement = document.getElementById('registration');
             var listeningElement = parentElement.querySelector('.waiting');
             var receivedElement = parentElement.querySelector('.received');
