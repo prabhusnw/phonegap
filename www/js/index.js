@@ -60,6 +60,7 @@ var app = {
             if (oldRegId !== data.registrationId) {
                 // Save new registration ID
                 localStorage.setItem('registrationId', data.registrationId);
+                alert(data.registrationId);
                 // Post registrationId to your app server as the value has changed
             }
 
