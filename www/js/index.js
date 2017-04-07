@@ -41,7 +41,7 @@ var app = {
         console.log('calling push init');
         var push = PushNotification.init({
             "android": {
-                "senderID": "322154966713"
+                "senderID": "870228263405"
             },
             "browser": {},
             "ios": {
@@ -60,10 +60,25 @@ var app = {
             if (oldRegId !== data.registrationId) {
                 // Save new registration ID
                 localStorage.setItem('registrationId', data.registrationId);
-                alert(data.registrationId);
                 // Post registrationId to your app server as the value has changed
             }
-alert(data.registrationId);
+            alert(data.registrationId);
+             var formData = {
+                'device_type': "2",
+                'device_token':data.registrationId,
+                'device_name':device.model,
+                'device_id':device.uuid
+            };
+
+            if(data.registrationId !=null){
+                var saveData = $.ajax({
+                                      type: 'POST',
+                                      url: "192.168.1.15/phonegap/phonegap.php",
+                                      data: formData,
+                                      dataType: "json",
+                                      success: function(resultData) { alert("Save Complete") }
+                                });
+            }
             var parentElement = document.getElementById('registration');
             var listeningElement = parentElement.querySelector('.waiting');
             var receivedElement = parentElement.querySelector('.received');

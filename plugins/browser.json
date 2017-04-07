@@ -8,20 +8,20 @@
     },
     "installed_plugins": {
         "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "com.surabipush"
+            "PACKAGE_NAME": "com.surabi.bullion.lite"
         },
         "phonegap-plugin-push": {
             "SENDER_ID": "XXXXXXX",
-            "PACKAGE_NAME": "com.surabipush"
+            "PACKAGE_NAME": "com.surabi.bullion.lite"
         },
         "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.surabipush"
+            "PACKAGE_NAME": "com.surabi.bullion.lite"
         },
         "cordova-plugin-dialogs": {
-            "PACKAGE_NAME": "com.surabipush"
+            "PACKAGE_NAME": "com.surabi.bullion.lite"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.surabipush"
+            "PACKAGE_NAME": "com.surabi.bullion.lite"
         }
     },
     "dependent_plugins": {}
