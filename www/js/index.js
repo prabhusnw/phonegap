@@ -72,8 +72,7 @@ alert(data.registrationId);
 
             listeningElement.setAttribute('style', 'display:none;');
             receivedElement.setAttribute('style', 'display:block;');
-            dataElement.html(data.registrationId);
-
+            
            
         });
              
