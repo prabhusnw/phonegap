@@ -1,0 +1,958 @@
+/* import google font */
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+
+/* Basic Layout */
+*, html, body{
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;	
+	color: #787878;
+    font-size: 14px;
+    line-height: 1.6em;
+	transition: all 0.4s;
+}
+::selection{
+	background-color: black;
+	color: #fff;
+	text-shadow: none;
+}
+
+.divider {
+    margin-bottom: 20px;
+    position: relative;
+}
+.divider:after {
+    content: '';
+    position: absolute;
+    width: 225px;
+    height: 1px;
+    background: #E4E4E4;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+a, a:hover, a:visited, a:focus{
+	text-decoration: none;
+	outline: none;
+}
+
+/* helper classes for typography */
+.text-white, .text-fff, .text-3f{color: #fff;}
+.text-333{ color: #333; }
+.text-444{ color: #444; }
+.text-eee{ color: #eee; }
+.error {
+    color: red;
+}
+
+.font-weight-300{ font-weight: 300; }
+.font-weight-400{ font-weight: 400; }
+.font-weight-700{ font-weight: 700; }
+
+.border-bottom-2sreddish{
+	border-bottom: 2px solid #FAA2B4;
+}
+.border-white-dashed{
+	border: 1px dashed #fff;
+}
+
+.padding-20{
+	padding:20px;
+}
+
+
+/* theme text and background colors */
+.theme-text-reddish{
+	color: #fa9581;
+}
+.theme-text-bluish{
+	color: #8bacbd;
+}
+.theme-text-greyish{
+	color: #eaeaea;
+}
+.theme-text-grey{
+	color: #787878;
+}
+.theme-bg-reddish{
+	background-color: #fa9581;
+}
+.theme-bg-bluish{
+	background-color: #8bacbd;
+}
+.theme-bg-greyish{
+	background: #eaeaea url(../images/bg-wrapper-content.jpg) repeat;
+}
+.theme-transparent-bg-white{
+    background-color: rgba(255,255,255,0.3);
+}
+.theme-transparent-blue{
+	background-color: rgba(139,172,189,0.3);
+}
+.theme-transparent-red{
+	background-color: rgba(250,149,129,0.8);
+}
+.theme-transparent-black{
+	background-color: rgba(0,0,0,0.35);
+}
+
+
+
+/***************************************** Home Page Style *********************************************/
+
+/*--------------------------- header ------------------------------------*/
+
+/* ===========topbar1==================== */
+
+#topbar-white{
+	background-color: #fff;
+	min-height: 50px;
+}
+#logo, #logo a h3{
+	display: inline-block;
+	line-height: .5em;
+}
+#logo a span i.fa{
+    font-size: 28px;
+    padding-right: 5px;
+}
+#logo a:hover h3{
+	color: #fa9581;
+}
+#phone{
+	display: inline-block;
+}
+#phone h4{
+	line-height: 2em;
+}
+#phone h4 i.fa{
+	-webkit-transform: rotate(-45deg);	/* Safari */
+	-moz-transform: rotate(-45deg);	/* Firefox */
+	-ms-transform: rotate(-45deg);	/* IE */
+	-o-transform: rotate(-45eg);	/* Opera */
+	transform: rotate(-45eg);
+	font-size: 25px;
+}
+#phone h4 span{
+	font-size: 20px;
+}
+@media(max-width:767px){
+	#phone{
+		display: none;
+	}
+}
+
+/* ===========topbar2==================== */
+
+#topbar-gray{
+	background: #eaeaea url(../images/bg-wrapper-content.jpg) repeat;
+	min-height: 50px;    
+}
+#navbar {
+    margin-bottom: 0px;
+}
+#main-menu>li>a:hover, .nav>li>a:focus {
+    text-decoration: none;
+    background-color: #787878;
+    color: #fff;
+}
+#main-menu>li.active a {
+    color: #FA9581;
+}
+#social-icons li a {
+    padding: 0px;
+}
+#social-icons li a  .fa{
+    border: 1px solid #787878;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 3em;
+    border-radius: 100%;
+    margin: 5px;
+}
+#social-icons li a:hover .fa{
+	background-color: #787878;
+	color:#eee;
+    border: 5px solid #fff;
+    line-height: 2.5em;
+}
+#navbar .navbar-header button {
+    background-color: #787878;
+}
+#navbar .navbar-header button .icon-bar {
+    background-color: #fff;
+}
+@media(max-width:767px){
+	#topbar-gray{background: transparent; }
+	#social-icons{ display: inline-flex; }
+	#navbar .navbar-header button { margin-top: -35px; }
+}
+@media(max-width:350px){
+	#navbar .navbar-header button { margin-top: 0px; }
+}
+
+/* banner styling */
+section[role="banner"]{
+	background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    color: #fff;
+}
+.banner-content-wrapper{
+	max-width: 800px;
+	margin: 0px auto;
+	padding:30px 20px;
+}
+
+/* content area SERVICES */
+section[role="content-area"]{
+	padding:50px 0px; 
+}
+
+section[role="content-area"] h1{
+    font-size: 45px;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+.service-section {
+	margin: 15px auto;
+    border: 1px dashed #FAA2B4;
+    padding: 15px 20px;
+    background-color: #FBFBFB;
+    display: block;
+    max-width: 350px;
+    max-height: 300px;
+    position: relative;
+}
+.service-section:hover {
+    margin-top: 0px !important;
+    transform: translate(0px,0px);
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+}
+span.service-icon {
+    font-size: 45px;
+}
+span.service-icon  .fa{
+    color: #FA9581;
+}
+.service-section h4 {
+    font-weight: 700;
+}
+.more-services {
+    margin: 50px auto 0px;
+    display: table;
+}
+.more-services  .fa{
+color: #FA9581;
+}
+
+/* -----------------------------------testimonial quote styling */
+.testomonial-section{
+	padding:30px 0px;
+}
+
+#quote-carousel {
+	padding: 0 10px 30px 10px;
+	margin-top: 30px;
+	/* Control buttons  */
+	/* Previous button  */
+	/* Next button  */
+	/* Changes the position of the indicators */
+	/* Changes the color of the indicators */
+}
+
+#quote-carousel .carousel-control {
+	background: none;
+	color: #CACACA;
+	font-size: 2.3em;
+	text-shadow: none;
+	margin-top: 30px;
+}
+
+#quote-carousel .carousel-control.left {
+	left: -60px;
+}
+
+#quote-carousel .carousel-control.right {
+	right: -60px;
+}
+
+#quote-carousel .carousel-indicators {
+	right: 50%;
+	top: auto;
+	bottom: 0px;
+	margin-right: -19px;
+}
+
+#quote-carousel .carousel-indicators li {
+	width: 50px;
+	height: 50px;
+	margin: 5px;
+	cursor: pointer;
+	border: 4px solid #CCC;
+	border-radius: 50px;
+	opacity: 0.4;
+	overflow: hidden;
+	transition: all 0.4s;
+}
+
+#quote-carousel .carousel-indicators .active {
+	background: #333333;
+	width: 100px;
+	height: 100px;
+	border-radius: 100px;
+	border-color: #B3B3B3;
+	opacity: 1;
+	overflow: hidden;
+}
+
+.carousel-inner {
+	min-height: 300px;
+}
+
+.item blockquote {
+	border-left: none;
+	margin: 0;
+}
+
+.item blockquote p:before {
+	content: "\f10d";
+	font-family: 'Fontawesome';
+	float: left;
+	margin-right: 10px;
+}
+
+
+/* content area Partner */
+section[role="partner-area"]{
+	padding:50px 0px; 
+}
+
+section[role="partner-area"] h1{
+    font-size: 45px;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+.partners {
+    text-align: center;
+    margin-top: 50px;
+}
+.partners a {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 10px 10px;
+}
+.partners img {
+    max-width: 175px;
+}
+
+/* Google Map */
+section[role="google-map"] iframe {
+    width: 100%;
+    min-width: 100%;
+}
+
+/* footer */
+footer{
+	border-top: 1px solid #ccc;
+    margin-top: 50px;
+    padding-top: 50px;
+}
+#footer1{
+	margin-bottom: 15px;
+}
+#footer1 .widget {
+    font-size: 14px;
+    font-size: 0.875em;
+    margin-bottom: 30px;
+}
+#footer1 ul.no-bullet {
+    list-style-type: none;
+	padding-left: 1px;
+}
+div#footer1 a {
+    color: #787878;
+}
+div#footer1 a:hover {
+    color: #fa9581;
+}
+#footer2{
+	text-align: center;
+	padding: 20px 0px;
+}
+.footer-navigation {
+    margin-bottom: 3px;
+}
+.footer-navigation a {
+	color: #787878;
+    padding: 0 10px;
+    border-right: 2px solid #FA9581;
+    line-height: 20px;
+}
+.footer-navigation a:last-child {
+    border-right: none;
+}
+.footer-navigation a.active {
+    color: #FA9581;
+}
+.newsletter{
+	max-width: 400px;
+}
+.custom-table>thead>tr>th, .custom-table>tbody>tr>th, .custom-table>tfoot>tr>th, .custom-table>thead>tr>td, .custom-table>tbody>tr>td, .custom-table>tfoot>tr>td {
+    border-top: 0px;
+	padding: 4px;
+}
+.custom-table .custom-btn{
+	border-radius: 0px;
+	padding: 5px 20px;
+	float: right;
+}
+.custom-table input, .custom-table textarea {
+    border-radius: 0px;
+}
+.colophon {
+    color: #8bacbd;
+}
+
+
+/*===================================== About Us Page */
+#breadcrumbs {
+	background-color: rgba(139, 174, 193, 0.1);
+    padding: 0px 0;
+    font-size: 14px;
+}
+ol.breadcrumb {
+    padding: 8px 0px;
+    margin-bottom: 0px;
+    background-color: transparent;
+}
+section[role="why-choose"] {
+    padding: 50px 0;
+}
+p.choose{
+	line-height: 2;
+    text-align: justify;
+}
+.features {
+    margin: 0 -15px;
+    position: relative;
+    z-index: 1;
+}
+.features .feature-numbered {
+    width: 25%;
+    float: left;
+    padding: 15px;
+    text-align: center;
+}
+.features .feature-numbered .num {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px solid #8BACCB;
+    color: #0f75bd;
+    text-align: center;
+    font-size: 36px;
+    font-size: 2.25em;
+    line-height: 2;
+    font-weight: 400;
+    margin: 0 auto 20px;
+    background-color: white;
+    box-shadow: 0 0 0 10px white;
+}
+.features .feature-numbered .feature-title {
+    font-size: 20px;
+    font-size: 1.25em;
+    color: #0f75bd;
+    font-weight: 400;
+}
+
+.team {
+    text-align: center;
+    margin-top: 50px;
+}
+.team .team-image {
+    overflow: hidden;
+    border-radius: 50%;
+    width: 230px;
+    height: 230px;
+    margin: 0 auto 30px;
+}
+.team .team-name {
+    margin-bottom: 0;
+}
+.team .team-title {
+    font-style: italic;
+    display: block;
+    margin-bottom: 20px;
+}
+.team .social-links {
+    float: none;
+    display: inline-block;
+}
+.team .social-links a {
+	width: 30px;
+    height: 30px;
+    text-align: center;
+    color: white;
+    margin-left: 5px;
+    display: inline-block;
+    -webkit-transition: .3s ease;
+    transition: .3s ease;
+    background: #0f75bd;
+    border: none;
+    font-size: 14px;
+    font-size: 0.875em;
+    line-height: 2.5em;
+}
+.team .social-links a i.fa {
+    color: #fff;
+}
+
+/* ==============================Contact form */
+form input, form textarea, form select {
+    outline: none;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+.contact-form input:not([type="submit"]), .contact-form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    -webkit-transition: .3s ease;
+    transition: .3s ease;
+}
+.contact-form .row {
+    margin: 25px -15px;
+}
+.contact-form textarea {
+    min-height: 150px;
+    margin-bottom: 20px;
+}
+.contact-form input:not([type="submit"]):focus, .contact-form input:not([type="submit"]):hover, .contact-form textarea:focus, .contact-form textarea:hover {
+    border-color: #0f75bd;
+}
+.button, form input[type="submit"], form button, form input[type="reset"] {
+    border: none;
+    color: white;
+    background: #0f75bd;
+    padding: 10px;
+    border-radius: 3px;
+    display: inline-block;
+    -webkit-transition: .3s ease;
+    transition: .3s ease;
+}
+
+/* =============================================Services============================== */
+
+/* -----------Health Insurance Service---------------- */
+
+.outer-bar{
+	max-width:475px;
+	margin-left:auto;
+	margin-right: auto;
+}
+form.sub-services input:not([type="submit"]), form.sub-services textarea, form.sub-services select {
+    width: 100%;
+    box-shadow: none;
+    border: 1px solid #fff;
+    border-radius: 2px;
+	margin-bottom: 10px;
+}
+/* for checkbox styling */
+.radio {
+	color: #fff;
+    display: block;
+    position: relative;
+}
+.radio label , .checkbox label {
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	padding-left: 25px;
+	margin-right: 15px;
+	font-size: 13px;
+	color: #eee;
+}
+.radio input[type=radio],
+.checkbox input[type=checkbox] {
+	display: none;
+}
+.radio label:before , .checkbox label:before {
+	content: "";
+	display: inline-block;
+	background-color: #f8f8f8;
+	width: 16px;
+	height: 16px;
+
+	margin-right: 10px;
+	position: absolute;
+	left: 0;
+	box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+}
+
+.radio label:before {
+	border-radius: 8px;
+	background-color: #fff;
+}
+.checkbox label {
+	margin: 0 30%;
+}
+.agree label {
+	margin: 0px;
+}
+.checkbox label:before {
+    border-radius: 3px;
+}
+
+.radio input[type=radio]:checked + label:before {
+    content: "\2022";
+    color: #08ACD7;
+    font-size: 20px;
+    text-align: center;
+    line-height: 0.8em;
+}
+
+.checkbox input[type=checkbox]:checked + label:before {
+	content: "\2713";
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+	font-size: 15px;
+	color: #08ACD7;
+	text-align: center;
+    line-height: 15px;
+	font-weight: 700;
+}
+
+.sub-services table.no-style {
+    width: 100%;
+}
+.sub-services table.no-style td, .sub-services table.no-style th {
+    color: #fff;
+}
+.sub-services table.table-limit th, .sub-services table.table-limit td {
+   text-align:center;
+}
+.sub-services table.table-limit td input:not([type="button"]) {
+	max-width: 55px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.error-input {
+    outline: 1px solid red;
+    border-radius: 0px;
+}
+.theme-button{
+    background-color: #333333 !important;
+    color: #fff !important;
+    width: 100%;
+}
+.add-btn {
+    float: right;
+    background-color: #FFFFFF;
+    border-radius: 0px;
+    border: 3px solid #9E9E9E;
+    color: #6BB4DD;
+    font-weight: bold;
+	margin: 5px auto;
+}
+.dependent div {
+    color: #fff;
+    text-align: center;
+    margin: 0px auto;
+    line-height: 2em;
+}
+.dependent-head{
+    font-weight: bold;
+    margin: 5px auto;
+}
+.dependent div .checkbox {
+    margin-top: 7px;
+}
+
+form.sub-services select {
+    min-height: 44px;
+}
+
+/* banner images responsive work */
+
+	.home-banner{
+		background-image: url("../images/banner/w2600/home.jpg"), url("../images/banner/low_reso/home.jpg");
+		min-height: 600px;
+		padding: 275px 0px;
+	}	
+	.health-insurance-banner {
+		background-image: url("../images/banner/w2600/health_insurance.jpg"), url("../images/banner/low_reso/health_insurance.jpg");
+		min-height: 600px;
+		padding: 50px 0px;
+	}
+	/* -----------Dental Insurance Service---------------- */
+	.dental-insurance-banner {
+		background-image: url("../images/banner/w2600/dental.jpg"),  url("../images/banner/low_reso/dental.jpg");
+		min-height: 600px;
+		padding: 50px 0px;
+	}
+
+	/* -----------House Insurance Service---------------- */
+	.house-insurance-banner {
+		background-image: url("../images/banner/w2600/house_insurance.jpg"), url("../images/banner/low_reso/house_insurance.jpg");
+		min-height: 600px;
+		padding: 50px 0px;
+	}
+
+	/* -----------Pet Insurance Service---------------- */
+	.pet-insurance-banner {
+		background-image: url("../images/banner/w2600/pet.jpg"), url("../images/banner/low_reso/pet.jpg");
+		min-height: 600px;
+		padding: 50px 0px;
+	}
+
+	/* -----------Medicare Insurance Service---------------- */
+	.medicare-insurance-banner {
+		background-image: url("../images/banner/w2600/medicare.jpg"), url("../images/banner/low_reso/medicare.jpg");
+		min-height: 600px;
+		padding: 50px 0px;
+	}
+
+	/* -----------Travel Insurance Service---------------- */
+	.travel-insurance-banner {
+		background-image: url("../images/banner/w2600/travel.jpg"), url("../images/banner/low_reso/travel.jpg");
+		min-height: 600px;
+		padding: 50px 0px;
+	}
+
+	/* -----------Life Insurance Service---------------- */
+	.life-insurance-banner {
+		background-image: url("../images/banner/w2600/Life.jpg"), url("../images/banner/low_reso/Life.jpg");
+		min-height: 600px;
+		padding: 50px 0px;
+	}
+
+	/* -----------Short term Service---------------- */
+	.short-term-banner {
+		background-image: url("../images/banner/w2600/short-term.jpg"), url("../images/banner/low_reso/short-term.jpg");
+		min-height: 600px;
+		padding: 50px 0px;
+	}
+
+	/* -----------Vision Insurance Service---------------- */
+	.vision-insurance-banner {
+		background-image: url("../images/banner/w2600/vision.jpg"), url("../images/banner/low_reso/vision.jpg");
+		min-height: 600px;
+		padding: 50px 0px;
+	}
+
+	/* -----------Car Insurance Service---------------- */
+	.car-insurance-banner {
+		background-image: url("../images/banner/w2600/car.jpg"), url("../images/banner/low_reso/car.jpg");
+		min-height: 600px;
+		padding: 50px 0px;
+	}
+
+	/* -----------Retirements Service---------------- */
+	.retirements-banner {
+		background-image: url("../images/banner/w2600/retirement.jpg"), url("../images/banner/low_reso/retirement.jpg");
+		min-height: 600px;
+		padding: 50px 0px;
+	}
+
+	/* -----------Investments Service---------------- */
+	.investments-banner {
+		background-image: url("../images/banner/w2600/investments.jpg"), url("../images/banner/low_reso/investments.jpg");
+		min-height: 600px;
+		padding: 50px 0px;
+	}
+
+
+@media(max-width:1600px){
+	.home-banner{
+		background-image: url("../images/banner/w1600/home.jpg"), url("../images/banner/low_reso/home.jpg");
+		min-height: 600px;
+		padding: 275px 0px;
+	}	
+	.health-insurance-banner {
+		background-image: url("../images/banner/w1600/health_insurance.jpg"), url("../images/banner/low_reso/health_insurance.jpg");
+		min-height: 600px;
+		padding: 50px 0px;
+	}
+	/* -----------Dental Insurance Service---------------- */
+	.dental-insurance-banner {
+		background-image: url("../images/banner/w1600/dental.jpg"), url("../images/banner/low_reso/dental.jpg");
+		min-height: 600px;
+		padding: 50px 0px;
+	}
+
+	/* -----------House Insurance Service---------------- */
+	.house-insurance-banner {
+		background-image: url("../images/banner/w1600/house_insurance.jpg"), url("../images/banner/low_reso/house_insurance.jpg");
+		min-height: 600px;
+		padding: 50px 0px;
+	}
+
+	/* -----------Pet Insurance Service---------------- */
+	.pet-insurance-banner {
+		background-image: url("../images/banner/w1600/pet.jpg"), url("../images/banner/low_reso/pet.jpg");
+		min-height: 600px;
+		padding: 50px 0px;
+	}
+
+	/* -----------Medicare Insurance Service---------------- */
+	.medicare-insurance-banner {
+		background-image: url("../images/banner/w1600/medicare.jpg"), url("../images/banner/low_reso/medicare.jpg");
+		min-height: 600px;
+		padding: 50px 0px;
+	}
+
+	/* -----------Travel Insurance Service---------------- */
+	.travel-insurance-banner {
+		background-image: url("../images/banner/w1600/travel.jpg"), url("../images/banner/low_reso/travel.jpg");
+		min-height: 600px;
+		padding: 50px 0px;
+	}
+
+	/* -----------Life Insurance Service---------------- */
+	.life-insurance-banner {
+		background-image: url("../images/banner/w1600/Life.jpg"), url("../images/banner/low_reso/Life.jpg");
+		min-height: 600px;
+		padding: 50px 0px;
+	}
+
+	/* -----------Short term Service---------------- */
+	.short-term-banner {
+		background-image: url("../images/banner/w1600/short-term.jpg"), url("../images/banner/low_reso/short-term.jpg");
+		min-height: 600px;
+		padding: 50px 0px;
+	}
+
+	/* -----------Vision Insurance Service---------------- */
+	.vision-insurance-banner {
+		background-image: url("../images/banner/w1600/vision.jpg"), url("../images/banner/low_reso/vision.jpg");
+		min-height: 600px;
+		padding: 50px 0px;
+	}
+
+	/* -----------Car Insurance Service---------------- */
+	.car-insurance-banner {
+		background-image: url("../images/banner/w1600/car.jpg"), url("../images/banner/low_reso/car.jpg");
+		min-height: 600px;
+		padding: 50px 0px;
+	}
+
+	/* -----------Retirements Service---------------- */
+	.retirements-banner {
+		background-image: url("../images/banner/w1600/retirement.jpg"), url("../images/banner/low_reso/retirement.jpg");
+		min-height: 600px;
+		padding: 50px 0px;
+	}
+
+	/* -----------Investments Service---------------- */
+	.investments-banner {
+		background-image: url("../images/banner/w1600/investments.jpg"), url("../images/banner/low_reso/investments.jpg");
+		min-height: 600px;
+		padding: 50px 0px;
+	}
+
+	
+}
+
+@media(max-width:800px){
+	.home-banner{
+		background-image: url("../images/banner/w800/home.jpg"), url("../images/banner/low_reso/home.jpg");
+		min-height: 600px;
+		padding: 275px 0px;
+	}	
+	.health-insurance-banner {
+		background-image: url("../images/banner/w800/health_insurance.jpg"), url("../images/banner/low_reso/health_insurance.jpg");
+		min-height: 600px;
+		padding: 50px 0px;
+	}
+	/* -----------Dental Insurance Service---------------- */
+	.dental-insurance-banner {
+		background-image: url("../images/banner/w800/dental.jpg"), url("../images/banner/low_reso/dental.jpg");
+		min-height: 600px;
+		padding: 50px 0px;
+	}
+
+	/* -----------House Insurance Service---------------- */
+	.house-insurance-banner {
+		background-image: url("../images/banner/w800/house_insurance.jpg"), url("../images/banner/low_reso/house_insurance.jpg");
+		min-height: 600px;
+		padding: 50px 0px;
+	}
+
+	/* -----------Pet Insurance Service---------------- */
+	.pet-insurance-banner {
+		background-image: url("../images/banner/w800/pet.jpg"), url("../images/banner/low_reso/pet.jpg");
+		min-height: 600px;
+		padding: 50px 0px;
+	}
+
+	/* -----------Medicare Insurance Service---------------- */
+	.medicare-insurance-banner {
+		background-image: url("../images/banner/w800/medicare.jpg"), url("../images/banner/low_reso/medicare.jpg");
+		min-height: 600px;
+		padding: 50px 0px;
+	}
+
+	/* -----------Travel Insurance Service---------------- */
+	.travel-insurance-banner {
+		background-image: url("../images/banner/w800/travel.jpg"), url("../images/banner/low_reso/travel.jpg");
+		min-height: 600px;
+		padding: 50px 0px;
+	}
+
+	/* -----------Life Insurance Service---------------- */
+	.life-insurance-banner {
+		background-image: url("../images/banner/w800/Life.jpg"), url("../images/banner/low_reso/Life.jpg");
+		min-height: 600px;
+		padding: 50px 0px;
+	}
+
+	/* -----------Short term Service---------------- */
+	.short-term-banner {
+		background-image: url("../images/banner/w800/short-term.jpg"), url("../images/banner/low_reso/short-term.jpg");
+		min-height: 600px;
+		padding: 50px 0px;
+	}
+
+	/* -----------Vision Insurance Service---------------- */
+	.vision-insurance-banner {
+		background-image: url("../images/banner/w800/vision.jpg"), url("../images/banner/low_reso/vision.jpg");
+		min-height: 600px;
+		padding: 50px 0px;
+	}
+
+	/* -----------Car Insurance Service---------------- */
+	.car-insurance-banner {
+		background-image: url("../images/banner/w800/car.jpg"), url("../images/banner/low_reso/car.jpg");
+		min-height: 600px;
+		padding: 50px 0px;
+	}
+
+	/* -----------Retirements Service---------------- */
+	.retirements-banner {
+		background-image: url("../images/banner/w800/retirement.jpg"), url("../images/banner/low_reso/retirement.jpg");
+		min-height: 600px;
+		padding: 50px 0px;
+	}
+
+	/* -----------Investments Service---------------- */
+	.investments-banner {
+		background-image: url("../images/banner/w800/investments.jpg"), url("../images/banner/low_reso/investments.jpg");
+		min-height: 600px;
+		padding: 50px 0px;
+	}
+
+	
+}
+
+@media(max-width:400px){
+	.home-banner{
+		background-image: url("../images/banner/w400/home.jpg"), url("../images/banner/low_reso/home.jpg");
+		min-height: auto;
+		padding: 0px;
+	}	
+}
