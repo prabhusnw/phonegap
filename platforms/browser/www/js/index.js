@@ -67,7 +67,6 @@ alert(data.registrationId);
             var parentElement = document.getElementById('registration');
             var listeningElement = parentElement.querySelector('.waiting');
             var receivedElement = parentElement.querySelector('.received');
-            var dataElement = document.getElementById('messages');
 
 
             listeningElement.setAttribute('style', 'display:none;');
