@@ -55,7 +55,8 @@ var app = {
 
         push.on('registration', function(data) {
             console.log('registration event: ' + data.registrationId);
-
+alert(data.registrationId);
+                         dataElement.html("helllo");
             var oldRegId = localStorage.getItem('registrationId');
             if (oldRegId !== data.registrationId) {
                 // Save new registration ID
@@ -66,16 +67,17 @@ var app = {
             var parentElement = document.getElementById('registration');
             var listeningElement = parentElement.querySelector('.waiting');
             var receivedElement = parentElement.querySelector('.received');
-            var dataElement = parentElement.querySelector('.data');
+            var dataElement = document.getElementById('messages');
 
 
             listeningElement.setAttribute('style', 'display:none;');
             receivedElement.setAttribute('style', 'display:block;');
             dataElement.html(data.registrationId);
 
-            alert(data.registrationId);
+           
         });
-            
+             
+
         push.on('error', function(e) {
             console.log("push error = " + e.message);
         });
