@@ -37,9 +37,10 @@ var app = {
         console.log('Received Device Ready Event');
         console.log('calling setup push');
         setTimeout(function() {
-    navigator.splashscreen.hide();
-}, 2000);
-        app.setupPush();
+            navigator.splashscreen.hide();
+            app.setupPush();
+        }, 2000);
+        
     },
     setupPush: function() {
         console.log('calling push init');
