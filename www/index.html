@@ -1,162 +1,52 @@
-<!doctype html>
-<!--[if IE 8]><html class="ie8 lt-ie10"><![endif]-->
-<!--[if IE 9]><html class="ie9 lt-ie10"><![endif]-->
-<!--[if gt IE 9]><!--><html lang="en"><!--<![endif]-->
+<!DOCTYPE html>
+<html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="cleartype" content="on">
-    <meta name="MobileOptimized" content="320">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/1.13.0/mocha.min.css">
-    <link rel="stylesheet" href="css/test.css">
-    <link rel="stylesheet" href="css/index.css">
-    <title>Slideout tests</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="www.frebsite.nl" />
+    <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
+
+    <title>jQuery.mmenu demo</title>
+
+    <link type="text/css" rel="stylesheet" href="css/demo.css" />
+    <link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.0.js"></script>
+    <script type="text/javascript" src="js/jquery.mmenu.all.min.js"></script>
+    <script type="text/javascript">
+      $(function() {
+        $('nav#menu').mmenu();
+      });
+    </script>
   </head>
   <body>
-
-    <nav id="menu" class="menu">
-      <a href="https://github.com/mango/slideout" target="_blank">
-        <header class="menu-header">
-          <span class="menu-header-title">Tests</span>
-        </header>
-      </a>
-
-      <section class="menu-section">
-        <h3 class="menu-section-title">Docs</h3>
-        <ul class="menu-section-list">
-          <li><a href="https://github.com/mango/slideout#installation" target="_blank">Installation</a></li>
-          <li><a href="https://github.com/mango/slideout#usage" target="_blank">Usage</a></li>
-          <li><a href="https://github.com/mango/slideout#api" target="_blank">API</a></li>
-          <li><a href="https://github.com/mango/slideout#npm-scripts" target="_blank">npm-scripts</a></li>
+    <div id="page">
+      <div class="header">
+        <a href="#menu"><span></span></a>
+        Demo
+      </div>
+      <div class="content">
+        <p><strong>This is a demo.</strong><br />
+          Click the menu icon to open the menu.</p>
+      </div>
+      <nav id="menu">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><span>About us</span>
+            <ul>
+              <li><a href="#about/history">History</a></li>
+              <li><span>The team</span>
+                <ul>
+                  <li><a href="#about/team/management">Management</a></li>
+                  <li><a href="#about/team/sales">Sales</a></li>
+                  <li><a href="#about/team/development">Development</a></li>
+                </ul>
+              </li>
+              <li><a href="#about/address">Our address</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
-      </section>
-
-      <section class="menu-section">
-        <h3 class="menu-section-title">Docs</h3>
-        <ul class="menu-section-list">
-          <li><a href="https://github.com/mango/slideout#installation" target="_blank">Installation</a></li>
-          <li><a href="https://github.com/mango/slideout#usage" target="_blank">Usage</a></li>
-          <li><a href="https://github.com/mango/slideout#api" target="_blank">API</a></li>
-          <li><a href="https://github.com/mango/slideout#npm-scripts" target="_blank">npm-scripts</a></li>
-        </ul>
-      </section>
-
-      <section class="menu-section">
-        <h3 class="menu-section-title">Docs</h3>
-        <ul class="menu-section-list">
-          <li><a href="https://github.com/mango/slideout#installation" target="_blank">Installation</a></li>
-          <li><a href="https://github.com/mango/slideout#usage" target="_blank">Usage</a></li>
-          <li><a href="https://github.com/mango/slideout#api" target="_blank">API</a></li>
-          <li><a href="https://github.com/mango/slideout#npm-scripts" target="_blank">npm-scripts</a></li>
-        </ul>
-      </section>
-
-      <section class="menu-section">
-        <h3 class="menu-section-title">Docs</h3>
-        <ul class="menu-section-list">
-          <li><a href="https://github.com/mango/slideout#installation" target="_blank">Installation</a></li>
-          <li><a href="https://github.com/mango/slideout#usage" target="_blank">Usage</a></li>
-          <li><a href="https://github.com/mango/slideout#api" target="_blank">API</a></li>
-          <li><a href="https://github.com/mango/slideout#npm-scripts" target="_blank">npm-scripts</a></li>
-        </ul>
-      </section>
-    </nav>
-
-    <main id="panel" class="panel">
-      <header class="panel-header">
-        <button class="btn-hamburger js-slideout-toggle"></button>
-        <h1 class="title">Slideout.js</h1>
-      </header>
-
-      <section class="box">
-        <h2 class="box-title">
-          
-          Surabi Bullion
-        </h2>
-        <ul id="messages">Socket Feed Data</ul>
-      </section>
-
-      <footer class="panel-footer">
-        <p>with <span class="heart">❤</span> by <a href="https://getmango.com/en" target="_blank">Mango</a></p>
-      </footer>
-    </main>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/1.13.0/mocha.min.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
-        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script>
-      mocha.setup('bdd');
-      var exports = null;
-      function assert(expr, msg) {
-        if (!expr) throw new Error(msg || 'failed');
-      }
-    </script>
-    <script src="js/slideout.js"></script>
-    <script src="js/test.js"></script>
-    <script>
-      window.onload = function() {
-        document.querySelector('.js-slideout-toggle').addEventListener('click', function() {
-          slideout.toggle();
-        });
-
-        document.querySelector('.menu').addEventListener('click', function(eve) {
-          if (eve.target.nodeName === 'A') { slideout.close(); }
-        });
-
-        var runner = mocha.run();
-      };
-    </script>
-
-      <script>
-  //var socket = io('http://localhost:8001');
-  var socket = io('http://demo.surabibullion.com:8001');
-  socket.on('feedxml', function (data) {
-        console.log('Get broadcasted msg feed xml:', data);
-      
-       var feedDetails = '<li>Cheque bar buying rate - ' + data.chequebarbuyingrate + '</li>' +
-                        '<li>Cheque bar market selling rate- ' + data.chequebarmarketsellingrate + '</li>' +
-                        '<li>Cheque bar market selling rate -' + data.chequebarsellingrate + '</li>' +
-                        '<li>Cheque bar Ft buying rate- ' + data.chequeftbuyingrate + '</li>' +
-                        '<li>Cheque bar Ft market selling rate -' + data.chequeftmarketsellingrate + '</li>' +
-                        '<li>Cheque bar Ft selling rate- ' + data.chequeftsellingrate + '</li>' +
-                        '<li>Unfix buying rate -' + data.unfixbuyingrate + '</li>' +
-                        '<li>Unfix market selling rate- ' + data.unfixmarketsellingrate + '</li>' +
-                        '<li>Unfix selling rate -' + data.unfixsellingrate + '</li>' +
-                        '<li>Last updated date -' + data.lastupdate + '</li>' +
-                        '<li>gold_bid-' + data.gold_bid + '</li>' +
-                        '<li>gold_ask-' + data.gold_ask + '</li>' +
-                        '<li>gold_ltp-' + data.gold_ltp + '</li>' +
-                        '<li>lgd_gold_high-' + data.lgd_gold_high + '</li>' +
-                        '<li>lgd_gold_low-' + data.lgd_gold_low + '</li>' +
-                        '<li>silver_bid-' + data.silver_bid + '</li>' +
-                        '<li>silver_ask-' + data.silver_ask + '</li>' +
-                        '<li>silver_ltp-' + data.silver_ltp + '</li>' +
-                        '<li>silver_lgd_high-' + data.silver_lgd_high + '</li>' +
-                        '<li>silver_lgd_low-' + data.silver_lgd_low + '</li>' +
-                        '<li>inr_bid-' + data.inr_bid + '</li>' +
-                        '<li>inr_ask-' + data.inr_ask + '</li>' +
-                        '<li>inr_ltp-' + data.inr_ltp + '</li>' +
-                        '<li>inr_high-' + data.inr_high + '</li>' +
-                        '<li>inr_low-' + data.inr_low + '</li>' +
-                        '<li>marketopenrate_unifix-' + data.marketopenrate_unifix + '</li>' +
-                        '<li>marketopenrate ch_bar-' + data.marketopenrate_ch_bar + '</li>' +
-                        '<li>marketopenrate ch_ft-' + data.marketopenrate_ch_ft + '</li>' +
-//                        '<li>marketopenrate-' + data.marketopenrate + '</li>' +
-                        '<li>intraday market-' + data.intraday_market + '</li>' +
-                        '<li>marketstatus -' + data.marketstatus + '</li>' +
-                        '<li>Bar market-' + data.bar_market + '</li>' +
-                        '<li>Ft market-' + data.ft_market + '</li>' +
-                        '<li>Unifix market-' + data.unifix_market + '</li>'+
-                        '<li>Auto order approval limit- ' + data.autoorderapplimit + '</li>' +
-                        '<li>Auto order approval variable- ' + data.autoordervariable + '</li>';
-                jQuery('#messages').html(feedDetails);
-           // document.getElementById("messages").innerHTML=feedDetails;
-  });
-  
-</script>
-
+      </nav>
+    </div>
   </body>
 </html>
