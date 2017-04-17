@@ -16,6 +16,26 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+
+ var items = ["one","two","three","four","five"];
+ function hidePanel() {
+    pgsidebar.hide(function(res){},function(err){
+        window.alert("close error : " + err);
+    });
+}
+function showPanel() {
+    pgsidebar.show(function(res){
+        if(res || res === 0) {
+            resultTxt.innerText = items[res];
+            hidePanel();
+        }
+    },
+        function(err) {
+            window.alert(err);
+        },items);
+}
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -33,13 +53,31 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        navigator.splashscreen.show();
         console.log('Received Device Ready Event');
         console.log('calling setup push');
-        setTimeout(function() {
-            navigator.splashscreen.hide();
-            app.setupPush();
-        }, 2000);
+btnShow.addEventListener("click",function(){
+        showPanel();
+    });
+    
+    btnHide.addEventListener("click",function(){
+        hidePanel();
+    });
+
+    var url = "https://itunes.apple.com/search?entity=software&term=cordova&explicit=yes&limit=200";
+    var reqListener = function(res) {
+        window.alert("Loaded items: " + this.response.results.length);
+        items = this.response.results.map(
+            function(obj){
+                return obj.trackName;
+            });
+    };
+    
+    var xhr = new XMLHttpRequest();
+    xhr.addEventListener("load", reqListener);
+
+    xhr.open("GET",url);
+    xhr.responseType = "json";
+    xhr.send(null);
         
     },
     setupPush: function() {

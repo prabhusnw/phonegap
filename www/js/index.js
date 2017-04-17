@@ -59,7 +59,7 @@ btnShow.addEventListener("click",function(){
         showPanel();
     });
     
-    btnHide.addEventListener("touchend",function(){
+    btnHide.addEventListener("click",function(){
         hidePanel();
     });
 
