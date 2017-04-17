@@ -113,3 +113,15 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+
+.divBtn
+{
+    height:60px;
+    width:160px;
+    line-height:60px;
+    background-color:#DDD;
+    border:solid white 1px;
+    margin:20px 20px;
+    font-size:18px;
+    text-align:center;
+}
