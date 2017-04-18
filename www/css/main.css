@@ -29,10 +29,7 @@ body {
 	padding: 0;
 	width: inherit;
 }
-.menu-section-list li span
-{
-	margin:left;
-}
+
 #menu ul li {
 	border-bottom: solid #333 1px;
 	box-shadow: 0 1px 0 #727272;
