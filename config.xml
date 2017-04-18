@@ -32,7 +32,7 @@
 
     
     <preference name="SplashScreen" value="screen" />
-    <preference name="SplashScreenDelay" value="2000" />
+    <preference name="SplashScreenDelay" value="4000" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
     <preference name="StatusBarOverlaysWebView" value="false" />
@@ -40,7 +40,7 @@
     <preference name="StatusBarStyle" value="blacktranslucent" />
     <preference name="orientation" value="portrait" />
 
-      <splash src="splash.png" />
+      <splash src="home_bg.gif" />
 
     </platform>
     <platform name="ios">
