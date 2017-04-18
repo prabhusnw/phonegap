@@ -31,8 +31,8 @@
         <plugin name="cordova-plugin-splashscreen" source="npm" />
 
     
-       
-    <preference name="SplashScreenDelay" value="5000" />
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="2000" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
     <preference name="StatusBarOverlaysWebView" value="false" />
@@ -40,10 +40,7 @@
     <preference name="StatusBarStyle" value="blacktranslucent" />
     <preference name="orientation" value="portrait" />
 
-    <splash src="www/res/screen/android/screen-hdpi-portrait.png" platform="android" qualifier="hdpi" />
-    <splash src="www/res/screen/android/screen-hdpi-portrait.png" platform="android" qualifier="xhdpi" />
-    <splash src="www/res/screen/android/screen-hdpi-portrait.png" platform="android" qualifier="xxhdpi" />
-    <splash src="www/res/screen/android/screen-hdpi-portrait.png" platform="android" qualifier="xxxhdpi" />
+      <splash src="splash.png" />
 
     </platform>
     <platform name="ios">

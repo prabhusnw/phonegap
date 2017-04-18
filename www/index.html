@@ -12,10 +12,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="css/test.css">
     <link rel="stylesheet" href="css/index.css">
+    <script type="text/javascript" src="cordova.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script>
+  //var socket = io('http://localhost:8001');
+  var socket = io('http://demo.surabibullion.com:8001');
+  socket.on('feedxml', function (data) {
+         var feedDetails = 
+                        'Last updated date -' + data.lastupdate;
+                jQuery('#lastUpdated').html(feedDetails);
+           // document.getElementById("messages").innerHTML=feedDetails;
+  });
+</script>
     <style>
       .slideout-menu { text-align: left; }
       .btn-hamburger { right: 8px;}
       .box { height: 1500px; }
+
+      .navbar {
+          overflow: hidden;
+          background-color: #fff;
+          position: fixed;
+          top: 0;
+          width: 100%;
+         
+        }
+.main {
+  padding: 16px;
+  height: 1500px;
+  margin: 0px auto; 
+  background: #fff;
+  text-align: center; /* Used in this example to enable scrolling */
+}
+
     </style>
     <title>Surabi Bullion Lite</title>
   </head>
@@ -24,10 +54,10 @@
     <nav id="menu" class="menu">
      
       <header class="menu-header">
-          <span class="menu-header-image" 
-"><img src="css/assets/logo.png" width="50%" height="50%">
-</span>
-        </header>
+              <span class="menu-header-image">
+              <img src="css/assets/logo.png" width="50%" height="50%">
+            </span>
+      </header>
       
 
       <section class="menu-section">
@@ -41,11 +71,9 @@
 
       
     </nav>
-
-    <main id="panel" class="panel">
+ <main id="panel" class="panel">
       <header class="panel-header">
         <button class="btn-hamburger js-slideout-toggle"></button>
-        <h1 class="title">Surabi Bullion Lite</h1>
       </header>
 
       <section class="box">
@@ -54,9 +82,10 @@
       </section>
 
       <footer class="panel-footer">
-        <p>@copyright<a href="https://surabibullion.com" target="_blank">Surabi Bullion</a></p>
+        <p id="lastUpdated">LAST UPDATED DATE - </p>
       </footer>
     </main>
+
     <script src="js/slideout.js"></script>
     <script>
       window.onload = function() {
