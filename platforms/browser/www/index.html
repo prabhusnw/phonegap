@@ -12,43 +12,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="css/test.css">
     <link rel="stylesheet" href="css/index.css">
+     <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
     <script type="text/javascript" src="cordova.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
   //var socket = io('http://localhost:8001');
   var socket = io('http://demo.surabibullion.com:8001');
   socket.on('feedxml', function (data) {
-         var feedDetails = 
-                        'Last updated date -' + data.lastupdate;
-                jQuery('#lastUpdated').html(feedDetails);
+          var lastupdate = 'Last updated date<br/> '+ data.lastupdate; 
+          var chequebarsellingrate = data.chequebarsellingrate; 
+          var chequebarbuyingrate = data.chequebarbuyingrate; 
+          var chequeftsellingrate = data.chequeftsellingrate; 
+          var chequeftbuyingrate = data.chequeftbuyingrate; 
+          var unfixbuyingrate = data.unfixbuyingrate; 
+          var unfixsellingrate = data.unfixsellingrate; 
+
+
+          
+                        jQuery('#chequebarsellingrate').html(chequebarsellingrate);
+                        jQuery('#chequebarbuyingrate').html(chequebarbuyingrate);
+
+                        jQuery('#chequeftsellingrate').html(chequeftsellingrate);
+                        jQuery('#chequeftbuyingrate').html(chequeftbuyingrate);
+
+                        jQuery('#unfixbuyingrate').html(unfixbuyingrate);
+                        jQuery('#unfixsellingrate').html(unfixsellingrate);
+
+
+                        jQuery('#lastUpdated').html(lastupdate);
            // document.getElementById("messages").innerHTML=feedDetails;
   });
 </script>
     <style>
       .slideout-menu { text-align: left; }
       .btn-hamburger { right: 8px;}
-      .box { height: 1500px; }
-
-      .navbar {
-          overflow: hidden;
-          background-color: #fff;
-          position: fixed;
-          top: 0;
-          width: 100%;
-         
-        }
-.main {
-  padding: 16px;
-  height: 1500px;
-  margin: 0px auto; 
-  background: #fff;
-  text-align: center; /* Used in this example to enable scrolling */
-}
-
-    </style>
+      .box { height: 500px; }
+</style>
     <title>Surabi Bullion Lite</title>
-  </head>
+
+  
   <body>
 
     <nav id="menu" class="menu">
@@ -71,21 +82,106 @@
 
       
     </nav>
- <main id="panel" class="panel">
-      <header class="panel-header">
-        <button class="btn-hamburger js-slideout-toggle"></button>
+
+
+ <main class="panel" id="panel" >
+      <header class="panel-header" style="background:#fff; position: fixed; width: 100%; top:0px;">
+      <div class="menu_btn">
+        <button class="btn-hamburger js-slideout-toggle"></button></div>
+        <div class="logo"><img src="css/assets/header_logo.png"></div>
       </header>
 
+
       <section class="box">
-        <h2 class="box-title">Test</h2>
-        <div class="box-content"></div>
+      <div class="total_div_header">
+      <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6 padding_none">
+                  <div class="selling_header">SELLING</div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 padding_none">
+                   <div class="buying_header">BUYING</div>
+                </div>
+                </div>
+        </div>
+        <div class="total_div">
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                <div id="chequebarsellingrate" class="rate_right">2810.15</div>
+                  <div id="" class="rate_right">2810<span class="fa fa-long-arrow-up"></span></div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                   <div class="roundbutton">
+                     <p>BAR</p>
+                   </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                   <div id="chequebarbuyingrate" class="rate_left">2810</div>
+                   <div id="" class="rate_left"><span class="fa fa-long-arrow-down"></span>2810</div>
+                </div>
+               <div class="line"></div>
+            </div>
+
+          <div class="total_div">
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                <div id="chequeftsellingrate" class="rate_right">2810.15</div>
+                  <div id="" class="rate_right">2810<span class="fa fa-long-arrow-up"></span></div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                   <div class="roundbutton">
+                     <p>FT</p>
+                   </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                   <div id="chequeftbuyingrate" class="rate_left">2810</div>
+                   <div id="" class="rate_left"><span class="fa fa-long-arrow-down"></span>2810</div>
+                </div>
+               <div class="line"></div>
+            </div>
+
+
+             <div class="total_div">
+                 <div class="col-md-4 col-sm-4 col-xs-4">
+                <div id="unfixsellingrate" class="rate_right">2810.15</div>
+                  <div id="" class="rate_right">2810<span class="fa fa-long-arrow-up"></span></div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                   <div class="roundbutton">
+                     <p>UNFIX</p>
+                   </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                   <div id="unfixbuyingrate" class="rate_left">2810</div>
+                   <div id="" class="rate_left"><span class="fa fa-long-arrow-down"></span>2810</div>
+                </div>
+               <div class="line"></div>
+            </div>
+
+
+             <div class="total_div">
+                <div class="col-md-4 col-sm-4 col-xs-4"> 
+                 <div id="" class="rate_right">2810</div>
+                  <div id="" class="rate_right">2810<span></span> </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                   <div class="roundbutton">
+                     <p>WORLD<br/>RATE</p>
+                   </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                   <div id="" class="rate_left">2810</div>
+                  <div id="" class="rate_left"><span></span> 2810</div>
+              
+            </div>
+ <div class="line"></div>
+
+
+
       </section>
 
-      <footer class="panel-footer">
-        <p id="lastUpdated">LAST UPDATED DATE - </p>
-      </footer>
-    </main>
 
+      <footer class="footer_panel">
+        <p id="lastUpdated">Last updated date</p>
+      </footer>
+</main>
     <script src="js/slideout.js"></script>
     <script>
       window.onload = function() {
