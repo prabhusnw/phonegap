@@ -1,204 +1,242 @@
 <!doctype html>
-<!--[if IE 8]><html class="ie8 lt-ie10"><![endif]-->
-<!--[if IE 9]><html class="ie9 lt-ie10"><![endif]-->
-<!--[if gt IE 9]><!--><html lang="en"><!--<![endif]-->
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="cleartype" content="on">
-    <meta name="MobileOptimized" content="320">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="css/test.css">
-    <link rel="stylesheet" href="css/index.css">
-     <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<!--[if IE 8]>
+<html class="ie8 lt-ie10">
+   <![endif]-->
+   <!--[if IE 9]>
+   <html class="ie9 lt-ie10">
+      <![endif]-->
+      <!--[if gt IE 9]><!-->
+      <html lang="en">
+         <!--<![endif]-->
+         <head>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta http-equiv="cleartype" content="on">
+            <meta name="MobileOptimized" content="320">
+            <meta name="HandheldFriendly" content="True">
+            <meta name="apple-mobile-web-app-capable" content="yes">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+            <link rel="stylesheet" href="css/test.css">
+            <link rel="stylesheet" href="css/index.css">
+            <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <!-- jQuery library -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+            <!-- Latest compiled JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+         </head>
+         <script type="text/javascript" src="cordova.js"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+         <script>
+            //var socket = io('http://localhost:8001');
+            var socket = io('http://app.surabibullion.com:8100');
+            socket.on('feedxml', function (data) {
+                    var lastupdate = 'Last updated date<br/> '+ data.lastupdate; 
+                    var chequebarsellingrate = data.chequebarsellingrate; 
+                    var chequebarbuyingrate = data.chequebarbuyingrate; 
+                    var chequeftsellingrate = data.chequeftsellingrate; 
+                    var chequeftbuyingrate = data.chequeftbuyingrate; 
+                    var unfixbuyingrate = data.unfixbuyingrate; 
+                    var unfixsellingrate = data.unfixsellingrate; 
+            
+                    var marketopenrate_ch_bar = data.marketopenrate_ch_bar;
+                    var marketopenrate_ch_ft = data.marketopenrate_ch_ft;
+                    var marketopenrate_unfix = data.marketopenrate_unfix;
 
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  </head>
-    <script type="text/javascript" src="cordova.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-  //var socket = io('http://localhost:8001');
-  var socket = io('http://demo.surabibullion.com:8001');
-  socket.on('feedxml', function (data) {
-          var lastupdate = 'Last updated date<br/> '+ data.lastupdate; 
-          var chequebarsellingrate = data.chequebarsellingrate; 
-          var chequebarbuyingrate = data.chequebarbuyingrate; 
-          var chequeftsellingrate = data.chequeftsellingrate; 
-          var chequeftbuyingrate = data.chequeftbuyingrate; 
-          var unfixbuyingrate = data.unfixbuyingrate; 
-          var unfixsellingrate = data.unfixsellingrate; 
-
-
-          
-                        jQuery('#chequebarsellingrate').html(chequebarsellingrate);
-                        jQuery('#chequebarbuyingrate').html(chequebarbuyingrate);
-
-                        jQuery('#chequeftsellingrate').html(chequeftsellingrate);
-                        jQuery('#chequeftbuyingrate').html(chequeftbuyingrate);
-
-                        jQuery('#unfixbuyingrate').html(unfixbuyingrate);
-                        jQuery('#unfixsellingrate').html(unfixsellingrate);
-
-
-                        jQuery('#lastUpdated').html(lastupdate);
-           // document.getElementById("messages").innerHTML=feedDetails;
-  });
-</script>
-    <style>
-      .slideout-menu { text-align: left; }
-      .btn-hamburger { right: 8px;}
-      .box { height: 500px; }
-</style>
-    <title>Surabi Bullion Lite</title>
-
-  
-  <body>
-
-    <nav id="menu" class="menu">
-     
-      <header class="menu-header">
-              <span class="menu-header-image">
-              <img src="css/assets/logo.png" width="50%" height="50%">
-            </span>
-      </header>
-      
-
-      <section class="menu-section">
-        <ul class="menu-section-list">
-          <li><img src="css/assets/live_rate.png"  />    <span>Live Rate</span></li>
-          <li><img src="css/assets/world_rate.png"  />   <span>World Rate</span></li>
-          <li><img src="css/assets/ic_refine.png"  />     <span>Refining</span></li>
-          <li style="border-bottom: solid #cba76c 0.5px"><img src="css/assets/contact_us.png" />    <span>Contact Us</span></li>
-        </ul>
-      </section>
-
-      
-    </nav>
+                    jQuery('#chequebarsellingrate').html(chequebarsellingrate);
+                    jQuery('#chequebarbuyingrate').html(chequebarbuyingrate);        
+                    jQuery('#chequeftsellingrate').html(chequeftsellingrate);
+                    jQuery('#chequeftbuyingrate').html(chequeftbuyingrate);
+                    jQuery('#unfixbuyingrate').html(unfixbuyingrate);
+                    jQuery('#unfixsellingrate').html(unfixsellingrate);
+                    jQuery('#lastUpdated').html(lastupdate);
 
 
- <main class="panel" id="panel" >
-      <header class="panel-header" style="background:#fff; position: fixed; width: 100%; top:0px;">
-      <div class="menu_btn">
-        <button class="btn-hamburger js-slideout-toggle"></button></div>
-        <div class="logo"><img src="css/assets/header_logo.png"></div>
-      </header>
+                    
+ setPercentageValues(chequebarsellingrate,marketopenrate_ch_bar,'#chequebarsellingPerrate',"left"); 
+ setPercentageValues(chequebarbuyingrate,marketopenrate_ch_bar,'#chequebarbuyingPerrate',"right"); 
 
+ setPercentageValues(chequeftsellingrate,marketopenrate_ch_ft,'#chequeftsellingPerrate',"left"); 
+ setPercentageValues(chequeftbuyingrate,marketopenrate_ch_ft,'#chequeftbuyingPerrate',"right"); 
 
-      <section class="box">
-      <div class="total_div_header">
-      <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-6 padding_none">
-                  <div class="selling_header">SELLING</div>
-                </div>
-                <div class="col-md-6 col-sm-6 col-xs-6 padding_none">
-                   <div class="buying_header">BUYING</div>
-                </div>
-                </div>
-        </div>
-        <div class="total_div">
-                <div class="col-md-4 col-sm-4 col-xs-4">
-                <div id="chequebarsellingrate" class="rate_right">2810.15</div>
-                  <div id="" class="rate_right">2810<span class="fa fa-long-arrow-up"></span></div>
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-4">
-                   <div class="roundbutton">
-                     <p>BAR</p>
-                   </div>
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-4">
-                   <div id="chequebarbuyingrate" class="rate_left">2810</div>
-                   <div id="" class="rate_left"><span class="fa fa-long-arrow-down"></span>2810</div>
-                </div>
-               <div class="line"></div>
-            </div>
-
-          <div class="total_div">
-                <div class="col-md-4 col-sm-4 col-xs-4">
-                <div id="chequeftsellingrate" class="rate_right">2810.15</div>
-                  <div id="" class="rate_right">2810<span class="fa fa-long-arrow-up"></span></div>
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-4">
-                   <div class="roundbutton">
-                     <p>FT</p>
-                   </div>
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-4">
-                   <div id="chequeftbuyingrate" class="rate_left">2810</div>
-                   <div id="" class="rate_left"><span class="fa fa-long-arrow-down"></span>2810</div>
-                </div>
-               <div class="line"></div>
-            </div>
-
-
-             <div class="total_div">
-                 <div class="col-md-4 col-sm-4 col-xs-4">
-                <div id="unfixsellingrate" class="rate_right">2810.15</div>
-                  <div id="" class="rate_right">2810<span class="fa fa-long-arrow-up"></span></div>
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-4">
-                   <div class="roundbutton">
-                     <p>UNFIX</p>
-                   </div>
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-4">
-                   <div id="unfixbuyingrate" class="rate_left">2810</div>
-                   <div id="" class="rate_left"><span class="fa fa-long-arrow-down"></span>2810</div>
-                </div>
-               <div class="line"></div>
-            </div>
-
-
-             <div class="total_div">
-                <div class="col-md-4 col-sm-4 col-xs-4"> 
-                 <div id="" class="rate_right">2810</div>
-                  <div id="" class="rate_right">2810<span></span> </div>
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-4">
-                   <div class="roundbutton">
-                     <p>WORLD<br/>RATE</p>
-                   </div>
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-4">
-                   <div id="" class="rate_left">2810</div>
-                  <div id="" class="rate_left"><span></span> 2810</div>
-              
-            </div>
- <div class="line"></div>
+ setPercentageValues(unfixsellingrate,marketopenrate_unfix,'#chequeunfixsellingPerrate',"left"); 
+ setPercentageValues(unfixbuyingrate,marketopenrate_unfix,'#chequeunfixbuyingPerrate',"right"); 
 
 
 
-      </section>
+                            
+            //                        jQuery('#chequebarsellingrate').html(chequebarsellingrate);
+                                
+                                
+                     // document.getElementById("messages").innerHTML=feedDetails; 
+                      });
 
 
-      <footer class="footer_panel">
-        <p id="lastUpdated">Last updated date</p>
-      </footer>
-</main>
-    <script src="js/slideout.js"></script>
-    <script>
-      window.onload = function() {
-        var slideout = new Slideout({
-          'panel': document.getElementById('panel'),
-          'menu': document.getElementById('menu'),
-          'side': 'left'
-        });
-
-        document.querySelector('.js-slideout-toggle').addEventListener('click', function() {
-          slideout.toggle();
-        });
-
-        document.querySelector('.menu').addEventListener('click', function(eve) {
-          if (eve.target.nodeName === 'A') { slideout.close(); }
-        });
-      };
-    </script>
-  </body>
-</html>
+function setPercentageValues(currentRate,openrate,id_value,side){
+          var value = 0;
+                    if(currentRate != "-"){
+                       value =(100-((parseFloat(openrate)/parseFloat(currentRate))*100));  
+                    }else {
+                            value =0;
+                    }  
+                    var feedPercentageValue = parseFloat(value).toFixed(2);
+                    if((feedPercentageValue=="0")||(feedPercentageValue=="0.0") || (feedPercentageValue=="0.00")){
+                         jQuery(id_value).html("-");
+                    }else if(feedPercentageValue=="0.00"){
+                         jQuery(id_value).html("-");
+                    
+                    }
+                    else{       
+                       // jQuery('#chequebarpercentageValue').html(feedPercentageValue+"%");
+                    if(currentRate != "-"){
+                      if(side == "left"){
+                          if(parseFloat(value)>0){
+                                    jQuery(id_value).html(  feedPercentageValue+" %" + '<span class="fa fa-long-arrow-up"></span>');
+                          }else {
+                                    jQuery(id_value).html( feedPercentageValue+" %" + '<span class="fa fa-long-arrow-down"></span>' );
+                    
+                          }
+                          }else{
+                              if(parseFloat(value)>0){
+                                    jQuery(id_value).html(   '<span class="fa fa-long-arrow-up"></span>' + feedPercentageValue+" %");
+                          }else {
+                                    jQuery(id_value).html(  '<span class="fa fa-long-arrow-down"></span>' + feedPercentageValue+" %");
+                    
+                          }
+                          }
+                    }else{
+                       jQuery(id_value).html("-");
+                    }
+}
+}
+         </script>
+         <style>
+            .slideout-menu { text-align: left; }
+            .btn-hamburger { right: 8px;}
+            .box { height: 500px; }
+         </style>
+         <title>Surabi Bullion Lite</title>
+         <body>
+            <nav id="menu" class="menu">
+               <header class="menu-header">
+                  <span class="menu-header-image">
+                  <img src="css/assets/logo.png" width="50%" height="50%">
+                  </span>
+               </header>
+               <section class="menu-section">
+                  <ul class="menu-section-list">
+                     <li><img src="css/assets/live_rate.png"  />    <span>Live Rate</span></li>
+                     <li><img src="css/assets/world_rate.png"  />   <span>World Rate</span></li>
+                     <li><img src="css/assets/ic_refine.png"  />     <span>Refining</span></li>
+                     <li style="border-bottom: solid #cba76c 0.5px"><img src="css/assets/contact_us.png" />    <span>Contact Us</span></li>
+                  </ul>
+               </section>
+            </nav>
+            <main class="panel" id="panel" >
+               <header class="panel-header" style="background:#fff; position: fixed; width: 100%; top:0px;">
+                  <div class="menu_btn">
+                     <button class="btn-hamburger js-slideout-toggle"></button>
+                  </div>
+                  <div class="logo"><img src="css/assets/header_logo.png"></div>
+               </header>
+               <section class="box">
+                  <div class="total_div_header">
+                     <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-6 padding_none">
+                           <div class="selling_header">SELLING</div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 padding_none">
+                           <div class="buying_header">BUYING</div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="total_div">
+                     <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div id="chequebarsellingrate" class="rate_right">2810.15</div>
+                        <div id="chequebarsellingPerrate" class="rate_right">2810<span class="fa fa-long-arrow-up"></span></div>
+                     </div>
+                     <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div class="roundbutton">
+                           <p>BAR</p>
+                        </div>
+                     </div>
+                     <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div id="chequebarbuyingrate" class="rate_left">2810</div>
+                        <div id="chequebarbuyingPerrate" class="rate_left"><span class="fa fa-long-arrow-down"></span>2810</div>
+                     </div>
+                     <div class="line"></div>
+                  </div>
+                  <div class="total_div">
+                     <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div id="chequeftsellingrate" class="rate_right">2810.15</div>
+                        <div id="chequeftsellingPerrate" class="rate_right">2810<span class="fa fa-long-arrow-up"></span></div>
+                     </div>
+                     <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div class="roundbutton">
+                           <p>FT</p>
+                        </div>
+                     </div>
+                     <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div id="chequeftbuyingrate" class="rate_left">2810</div>
+                        <div id="chequeftbuyingPerrate" class="rate_left"><span class="fa fa-long-arrow-down"></span>2810</div>
+                     </div>
+                     <div class="line"></div>
+                  </div>
+                  <div class="total_div">
+                     <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div id="unfixsellingrate" class="rate_right">2810.15</div>
+                        <div id="chequeunfixsellingPerrate" class="rate_right">2810<span class="fa fa-long-arrow-up"></span></div>
+                     </div>
+                     <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div class="roundbutton">
+                           <p>UNFIX</p>
+                        </div>
+                     </div>
+                     <div class="col-md-4 col-sm-4 col-xs-4">
+                        <div id="unfixbuyingrate" class="rate_left">2810</div>
+                        <div id="chequeunfixbuyingPerrate" class="rate_left"><span class="fa fa-long-arrow-down"></span>2810</div>
+                     </div>
+                     <div class="line"></div>
+                  </div>
+                  <div class="total_div">
+                  <div class="col-md-4 col-sm-4 col-xs-4">
+                     <div id="" class="rate_right">2810</div>
+                     <div id="" class="rate_right">2810<span></span> </div>
+                  </div>
+                  <div class="col-md-4 col-sm-4 col-xs-4">
+                     <div class="roundbutton">
+                        <p>WORLD<br/>RATE</p>
+                     </div>
+                  </div>
+                  <div class="col-md-4 col-sm-4 col-xs-4">
+                     <div id="" class="rate_left">2810</div>
+                     <div id="" class="rate_left"><span></span> 2810</div>
+                  </div>
+                  <div class="line"></div>
+               </section>
+               <footer class="footer_panel">
+                  <p id="lastUpdated">Last updated date</p>
+               </footer>
+            </main>
+            <script src="js/slideout.js"></script>
+            <script>
+               window.onload = function() {
+                 var slideout = new Slideout({
+                   'panel': document.getElementById('panel'),
+                   'menu': document.getElementById('menu'),
+                   'side': 'left'
+                 });
+               
+                 document.querySelector('.js-slideout-toggle').addEventListener('click', function() {
+                   slideout.toggle();
+                 });
+               
+                 document.querySelector('.menu').addEventListener('click', function(eve) {
+                   if (eve.target.nodeName === 'A') { slideout.close(); }
+                 });
+               };
+            </script>
+         </body>
+      </html>
