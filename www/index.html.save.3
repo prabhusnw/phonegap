@@ -62,17 +62,17 @@
                     var marketopenrate_ch_bar = data.marketopenrate_ch_bar;
                     var marketopenrate_ch_ft = data.marketopenrate_ch_ft;
                     var marketopenrate_unfix = data.marketopenrate_unfix;
-                       
 
-
+                                               
+                     
                     jQuery('#chequebarsellingrate').html(gold_bid);
                     jQuery('#chequebarbuyingrate').html(gold_ask);
         
                     jQuery('#chequeftsellingrate').html(silver_bid);
                     jQuery('#chequeftbuyingrate').html(silver_ask);
 
-                    jQuery('#unfixbuyingrate').html(inr_ask);
-                    jQuery('#unfixsellingrate').html(inr_bid);
+                    jQuery('#unfixbuyingrate').html(inr_bid);
+                    jQuery('#unfixsellingrate').html(inr_ask);
 
                     jQuery('#gold_ask').html(gold_inr_bid);
                     jQuery('#inr_ask').html(gold_inr_ask);                      
@@ -83,36 +83,19 @@
                     
                     setPercentageValues(lgd_gold_high,'#chequebarsellingPerrate',"left","High"); 
                     setPercentageValues(lgd_gold_low,'#chequebarbuyingPerrate',"right","Low"); 
-                    
+
                     setPercentageValues(silver_lgd_high,'#chequeftsellingPerrate',"left","High"); 
                     setPercentageValues(silver_lgd_low,'#chequeftbuyingPerrate',"right","Low");
 
-                    setPercentageValues(inr_high,'#chequeunfixbuyingPerrate',"left","High");
-                    setPercentageValues(inr_low,'#chequeueinrask',"right","Low");
                                     
-                    setPercentageGoldRateValues(gold_inr_high,'#chequegoldbid',"left","High");
-                    setPercentageGoldRateValues(gold_inr_low,'#chequegoldask',"right","Low");
                             
-            //      jQuery('#chequebarsellingrate').html(chequebarsellingrate);
+            //                        jQuery('#chequebarsellingrate').html(chequebarsellingrate);
                                 
                                 
                      // document.getElementById("messages").innerHTML=feedDetails; 
                       });
-function setPercentageGoldRateValues(currentRate,id_value,side,Range){
-          var value = 0;
-           value = parseFloat(currentRate);
-           var feedPercentageValue = parseFloat(value).toFixed(0);
-                     
-                      if(Range == "High"){
-                          
-                                    jQuery(id_value).html(  feedPercentageValue+" %" + '<span class="fa fa-long-arrow-up"></span>');
-                          }else if(Range == "Low") {
-                                    jQuery(id_value).html( feedPercentageValue+" %" + '<span class="fa fa-long-arrow-down"></span>' );
-                    
-                          }
 
 
-}
 function setPercentageValues(currentRate,id_value,side,Range){
           var value = 0;
            value = parseFloat(currentRate);
@@ -126,7 +109,7 @@ function setPercentageValues(currentRate,id_value,side,Range){
                     
                           }
 
-
+}
 }
          </script>
          <style>
@@ -162,10 +145,10 @@ function setPercentageValues(currentRate,id_value,side,Range){
                   <div class="total_div_header">
                      <div class="row">
                         <div class="col-md-6 col-sm-6 col-xs-6 padding_none">
-                           <div class="ask_header">ASK</div>
+                           <div class="selling_header">SELLING</div>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6 padding_none">
-                           <div class="bid_header">BID</div>
+                           <div class="buying_header">BUYING</div>
                         </div>
                      </div>
                   </div>
@@ -204,7 +187,7 @@ function setPercentageValues(currentRate,id_value,side,Range){
                   <div class="total_div">
                      <div class="col-md-4 col-sm-4 col-xs-4">
                         <div id="unfixsellingrate" class="rate_right">2810.15</div>
-                        <div id="chequeunfixbuyingPerrate" class="rate_right"></div>
+                        <div id="chequeunfixsellingPerrate" class="rate_right"></div>
                      </div>
                      <div class="col-md-4 col-sm-4 col-xs-4">
                         <div class="roundbutton">
@@ -213,14 +196,14 @@ function setPercentageValues(currentRate,id_value,side,Range){
                      </div>
                      <div class="col-md-4 col-sm-4 col-xs-4">
                         <div id="unfixbuyingrate" class="rate_left">2810</div>
-                        <div id="chequeueinrask" class="rate_left"></div>
+                        <div id="chequeunfixbuyingPerrate" class="rate_left"></div>
                      </div>
                      <div class="line"></div>
                   </div>
                   <div class="total_div">
                   <div class="col-md-4 col-sm-4 col-xs-4">
                      <div id="gold_ask" class="rate_right">2810</div>
-                     <div id="chequegoldbid" class="rate_right"></div>
+                     <div id="" class="rate_right"></div>
                   </div>
                   <div class="col-md-4 col-sm-4 col-xs-4">
                      <div class="roundbutton">
@@ -229,7 +212,7 @@ function setPercentageValues(currentRate,id_value,side,Range){
                   </div>
                   <div class="col-md-4 col-sm-4 col-xs-4">
                      <div id="inr_ask" class="rate_left">2810</div>
-                     <div id="chequegoldask" class="rate_left"></div>
+                     <div id="" class="rate_left"></div>
                   </div>
                   <div class="line"></div>
                </section>
