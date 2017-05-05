@@ -16,10 +16,6 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
-
-
-
 var app = {
     // Application Constructor
     initialize: function() {
@@ -39,7 +35,8 @@ var app = {
     onDeviceReady: function() {
         console.log('Received Device Ready Event');
         console.log('calling setup push');
-
+        app.setupPush();
+    },
     setupPush: function() {
         console.log('calling push init');
         var push = PushNotification.init({
@@ -58,27 +55,22 @@ var app = {
 
         push.on('registration', function(data) {
             console.log('registration event: ' + data.registrationId);
-alert(data.registrationId);
-                         dataElement.html("helllo");
+
             var oldRegId = localStorage.getItem('registrationId');
             if (oldRegId !== data.registrationId) {
                 // Save new registration ID
                 localStorage.setItem('registrationId', data.registrationId);
+                alert(data.registrationId);
                 // Post registrationId to your app server as the value has changed
             }
-
+alert(data.registrationId);
             var parentElement = document.getElementById('registration');
             var listeningElement = parentElement.querySelector('.waiting');
             var receivedElement = parentElement.querySelector('.received');
 
-alert(data.registrationId);
-
             listeningElement.setAttribute('style', 'display:none;');
             receivedElement.setAttribute('style', 'display:block;');
-            
-           
         });
-             
 
         push.on('error', function(e) {
             console.log("push error = " + e.message);
