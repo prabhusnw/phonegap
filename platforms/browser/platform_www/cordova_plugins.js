@@ -54,10 +54,9 @@ module.exports.metadata =
 {
     "cordova-plugin-statusbar": "2.1.3",
     "phonegap-plugin-push": "1.8.4",
-    "cordova-plugin-console": "1.0.6",
+    "cordova-plugin-console": "1.0.7",
     "cordova-plugin-dialogs": "1.2.1",
-    "cordova-plugin-whitelist": "1.2.2",
-    "cordova-plugin-fcm-config": "1.0.0"
+    "cordova-plugin-whitelist": "1.2.2"
 }
 // BOTTOM OF METADATA
 });
