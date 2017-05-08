@@ -1,35 +1,35 @@
 {
   "project_info": {
-    "project_number": "322154966713",
-    "firebase_url": "https://surabiliteprabhu.firebaseio.com",
-    "project_id": "surabiliteprabhu",
-    "storage_bucket": "surabiliteprabhu.appspot.com"
+    "project_number": "739332954225",
+    "firebase_url": "https://testpush-23c80.firebaseio.com",
+    "project_id": "testpush-23c80",
+    "storage_bucket": "testpush-23c80.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:322154966713:android:7ce6f473a57622c0",
+        "mobilesdk_app_id": "1:739332954225:android:8dfa6c0f32d2eaae",
         "android_client_info": {
-          "package_name": "com.surabibullionliteprabhu"
+          "package_name": "com.testpushmessage"
         }
       },
       "oauth_client": [
         {
-          "client_id": "322154966713-3dtitjqsjqr911luuhdhivl4vvg95n0r.apps.googleusercontent.com",
+          "client_id": "739332954225-qgg9fgaiap8rs6leg2kv0pbd2k1t8o4l.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.surabibullionliteprabhu",
+            "package_name": "com.testpushmessage",
             "certificate_hash": "7945032bcaa7de91be635def3bf3cae49071674f"
           }
         },
         {
-          "client_id": "322154966713-gtq9i6lh2bkn3tu1ufukm4q0kd3k0cca.apps.googleusercontent.com",
+          "client_id": "739332954225-nfe5ke61ruueeh3b5ovnbif04mi9clsg.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDoWee5E3-x2U-yysG0hmzWUrd8cgM2zNE"
+          "current_key": "AIzaSyDQYKRwHYh9pUjLb0xejoIrf-xvZASJckg"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "322154966713-gtq9i6lh2bkn3tu1ufukm4q0kd3k0cca.apps.googleusercontent.com",
+              "client_id": "739332954225-nfe5ke61ruueeh3b5ovnbif04mi9clsg.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
