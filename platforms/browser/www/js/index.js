@@ -41,7 +41,7 @@ var app = {
         console.log('calling push init');
         var push = PushNotification.init({
             "android": {
-                "senderID": "413947106354"
+                "senderID": "1039662215934"
             },
             "browser": {},
             "ios": {
@@ -56,7 +56,6 @@ var app = {
         push.on('registration', function(data) {
             console.log('registration event: ' + data.registrationId);
             alert(data.registrationId);
-
             var oldRegId = localStorage.getItem('registrationId');
             if (oldRegId !== data.registrationId) {
                 // Save new registration ID

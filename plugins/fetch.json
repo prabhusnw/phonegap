@@ -14,7 +14,7 @@
         },
         "is_top_level": true,
         "variables": {
-            "SENDER_ID": "413947106354"
+            "SENDER_ID": "XXXXXXX"
         }
     },
     "cordova-plugin-console": {
@@ -37,6 +37,14 @@
         "source": {
             "type": "registry",
             "id": "cordova-plugin-whitelist@~1.2.1"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-fcm-config": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-fcm-config"
         },
         "is_top_level": true,
         "variables": {}
