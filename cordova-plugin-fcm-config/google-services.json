@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:413947106354:android:bb200215c1ddeb0a",
+        "mobilesdk_app_id": "1:413947106354:android:aab82239118bc909",
         "android_client_info": {
-          "package_name": "com.SurabiBullion.surabibullionlite"
+          "package_name": "com.surabibullionlite"
         }
       },
       "oauth_client": [
