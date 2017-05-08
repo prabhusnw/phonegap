@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "322154966713",
+    "firebase_url": "https://surabiliteprabhu.firebaseio.com",
+    "project_id": "surabiliteprabhu",
+    "storage_bucket": "surabiliteprabhu.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:322154966713:android:7ce6f473a57622c0",
+        "android_client_info": {
+          "package_name": "com.surabibullionliteprabhu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "322154966713-3dtitjqsjqr911luuhdhivl4vvg95n0r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.surabibullionliteprabhu",
+            "certificate_hash": "7945032bcaa7de91be635def3bf3cae49071674f"
+          }
+        },
+        {
+          "client_id": "322154966713-gtq9i6lh2bkn3tu1ufukm4q0kd3k0cca.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoWee5E3-x2U-yysG0hmzWUrd8cgM2zNE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "322154966713-gtq9i6lh2bkn3tu1ufukm4q0kd3k0cca.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
