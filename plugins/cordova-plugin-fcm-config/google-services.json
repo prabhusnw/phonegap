@@ -1,35 +1,27 @@
 {
   "project_info": {
-    "project_number": "1039662215934",
-    "firebase_url": "https://sblite-2c9c8.firebaseio.com",
-    "project_id": "sblite-2c9c8",
-    "storage_bucket": "sblite-2c9c8.appspot.com"
+    "project_number": "199333640227",
+    "firebase_url": "https://dealposfirebase.firebaseio.com",
+    "project_id": "dealposfirebase",
+    "storage_bucket": "dealposfirebase.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1039662215934:android:259f04e826f0c6ab",
+        "mobilesdk_app_id": "1:199333640227:android:3220ecaf4efa166f",
         "android_client_info": {
-          "package_name": "com.sblite"
+          "package_name": "com.mylopoints.myloapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1039662215934-cl0pandm3h8i55qe78cf8kprergsl4r1.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.sblite",
-            "certificate_hash": "7945032bcaa7de91be635def3bf3cae49071674f"
-          }
-        },
-        {
-          "client_id": "1039662215934-317rjmkt1p5c32phi6p9gvbths2hnnm3.apps.googleusercontent.com",
+          "client_id": "199333640227-3cqppidin1os5lcbjn77l2dsp1vr6rq3.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDkmPkMRILc0rbfeYagSHy1_bs6Unv6RFk"
+          "current_key": "AIzaSyAbix_GV5lemgSMU9c-LKoK6xZaJLZBCZ8"
         }
       ],
       "services": {
@@ -37,13 +29,8 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1039662215934-317rjmkt1p5c32phi6p9gvbths2hnnm3.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
           "status": 2
