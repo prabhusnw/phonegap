@@ -7,77 +7,25 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-battery-status": {
-            "PACKAGE_NAME": "com.testpushmessage"
-        },
-        "cordova-plugin-camera": {
-            "PACKAGE_NAME": "com.testpushmessage"
-        },
-        "cordova-plugin-media-capture": {
-            "PACKAGE_NAME": "com.testpushmessage"
-        },
-        "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.testpushmessage"
-        },
-        "cordova-plugin-contacts": {
-            "PACKAGE_NAME": "com.testpushmessage"
-        },
-        "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.testpushmessage"
-        },
-        "cordova-plugin-device-motion": {
-            "PACKAGE_NAME": "com.testpushmessage"
-        },
-        "cordova-plugin-device-orientation": {
-            "PACKAGE_NAME": "com.testpushmessage"
-        },
-        "cordova-plugin-dialogs": {
-            "PACKAGE_NAME": "com.testpushmessage"
-        },
-        "cordova-plugin-file-transfer": {
-            "PACKAGE_NAME": "com.testpushmessage"
-        },
-        "cordova-plugin-geolocation": {
-            "PACKAGE_NAME": "com.testpushmessage"
-        },
-        "cordova-plugin-globalization": {
-            "PACKAGE_NAME": "com.testpushmessage"
-        },
-        "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "com.testpushmessage"
-        },
-        "cordova-plugin-media": {
-            "PACKAGE_NAME": "com.testpushmessage"
-        },
-        "cordova-plugin-network-information": {
-            "PACKAGE_NAME": "com.testpushmessage"
-        },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.testpushmessage"
-        },
         "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "com.testpushmessage"
-        },
-        "cordova-plugin-vibration": {
-            "PACKAGE_NAME": "com.testpushmessage"
-        },
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.testpushmessage"
+            "PACKAGE_NAME": "com.surabibullionliteprabhu"
         },
         "phonegap-plugin-push": {
-            "SENDER_ID": "739332954225",
-            "PACKAGE_NAME": "com.testpushmessage"
+            "SENDER_ID": "322154966713",
+            "PACKAGE_NAME": "com.surabibullionliteprabhu"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.surabibullionliteprabhu"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.surabibullionliteprabhu"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.surabibullionliteprabhu"
         },
         "cordova-plugin-fcm-config": {
-            "PACKAGE_NAME": "com.testpushmessage"
+            "PACKAGE_NAME": "com.surabibullionliteprabhu"
         }
     },
-    "dependent_plugins": {
-        "cordova-plugin-compat": {
-            "PACKAGE_NAME": "com.testpushmessage"
-        },
-        "cordova-plugin-file": {
-            "PACKAGE_NAME": "com.testpushmessage"
-        }
-    }
+    "dependent_plugins": {}
 }
