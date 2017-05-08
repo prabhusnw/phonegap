@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "413947106354-v1l6ampd38qndc7o1hvlts5hhtm4fan7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.surabibullionlitedemo",
+            "certificate_hash": "7945032bcaa7de91be635def3bf3cae49071674f"
+          }
+        },
+        {
           "client_id": "413947106354-6ehgla5kqfmf3ef62q48c9811o1hipkm.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,20 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "413947106354-03abpp1ej1cpef7tkhu74k23gs912n9k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.surabibullionlite"
+              }
+            },
+            {
+              "client_id": "413947106354-6ehgla5kqfmf3ef62q48c9811o1hipkm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
