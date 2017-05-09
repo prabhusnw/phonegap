@@ -7,25 +7,77 @@
         "files": {}
     },
     "installed_plugins": {
+        "cordova-plugin-battery-status": {
+            "PACKAGE_NAME": "com.surabilitepush"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.surabilitepush"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "com.surabilitepush"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.surabilitepush"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "com.surabilitepush"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.surabilitepush"
+        },
+        "cordova-plugin-device-motion": {
+            "PACKAGE_NAME": "com.surabilitepush"
+        },
+        "cordova-plugin-device-orientation": {
+            "PACKAGE_NAME": "com.surabilitepush"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.surabilitepush"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.surabilitepush"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.surabilitepush"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "com.surabilitepush"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.surabilitepush"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "com.surabilitepush"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.surabilitepush"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.surabilitepush"
+        },
         "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.surabilitepush"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "com.surabilitepush"
+        },
+        "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.surabilitepush"
         },
         "phonegap-plugin-push": {
             "SENDER_ID": "677437474748",
             "PACKAGE_NAME": "com.surabilitepush"
         },
-        "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.surabilitepush"
-        },
-        "cordova-plugin-dialogs": {
-            "PACKAGE_NAME": "com.surabilitepush"
-        },
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.surabilitepush"
-        },
         "cordova-plugin-fcm-config": {
             "PACKAGE_NAME": "com.surabilitepush"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.surabilitepush"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.surabilitepush"
+        }
+    }
 }
