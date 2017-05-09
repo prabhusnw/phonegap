@@ -34,7 +34,6 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        app.setUpPush();
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -46,29 +45,5 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
-
-    },
-    
-    setUpPush: function() {
-       console.log('Set Up Push Event:');
-
-
-               //FCMPlugin.onTokenRefresh( onTokenRefreshCallback(token) ); 
-        //Note that this callback will be fired everytime a new token is generated, including the first time. 
-        FCMPlugin.onTokenRefresh(function(token){
-            alert( token );
-                               console.log('token' + token);
-
-        });
-        //FCMPlugin.getToken( successCallback(token), errorCallback(err) ); 
-        //Keep in mind the function will return null if the token has not been established yet. 
-        FCMPlugin.getToken(function(token){
-            alert(token);
-                               console.log('token' + token);
-
-        });
-
-
-
     }
 };

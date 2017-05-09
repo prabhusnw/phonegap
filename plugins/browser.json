@@ -66,9 +66,6 @@
         },
         "cordova-plugin-fcm": {
             "PACKAGE_NAME": "com.surabibullionliteprabhu"
-        },
-        "cordova-plugin-fcm-config": {
-            "PACKAGE_NAME": "com.surabibullionliteprabhu"
         }
     },
     "dependent_plugins": {
