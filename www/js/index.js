@@ -33,57 +33,42 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        console.log('Received Device Ready Event');
-        console.log('calling setup push');
-        app.setupPush();
+        app.receivedEvent('deviceready');
+        app.setUpPush();
     },
-    setupPush: function() {
-        console.log('calling push init');
-        var push = PushNotification.init({
-            "android": {
-                "senderID": "322154966713"
-            },
-            "browser": {},
-            "ios": {
-                "sound": true,
-                "vibration": true,
-                "badge": true
-            },
-            "windows": {}
+    // Update DOM on a Received Event
+    receivedEvent: function(id) {
+        var parentElement = document.getElementById(id);
+        var listeningElement = parentElement.querySelector('.listening');
+        var receivedElement = parentElement.querySelector('.received');
+
+        listeningElement.setAttribute('style', 'display:none;');
+        receivedElement.setAttribute('style', 'display:block;');
+
+        console.log('Received Event: ' + id);
+
+    },
+    
+    setUpPush: function() {
+       console.log('Set Up Push Event:');
+
+
+               //FCMPlugin.onTokenRefresh( onTokenRefreshCallback(token) ); 
+        //Note that this callback will be fired everytime a new token is generated, including the first time. 
+        FCMPlugin.onTokenRefresh(function(token){
+            alert( token );
+                               console.log('token' + token);
+
         });
-        console.log('after init');
+        //FCMPlugin.getToken( successCallback(token), errorCallback(err) ); 
+        //Keep in mind the function will return null if the token has not been established yet. 
+        FCMPlugin.getToken(function(token){
+            alert(token);
+                               console.log('token' + token);
 
-        push.on('registration', function(data) {
-            console.log('registration event: ' + data.registrationId);
-
-            var oldRegId = localStorage.getItem('registrationId');
-            if (oldRegId !== data.registrationId) {
-                // Save new registration ID
-                localStorage.setItem('registrationId', data.registrationId);
-                alert(data.registrationId);
-                // Post registrationId to your app server as the value has changed
-            }
-alert(data.registrationId);
-            var parentElement = document.getElementById('registration');
-            var listeningElement = parentElement.querySelector('.waiting');
-            var receivedElement = parentElement.querySelector('.received');
-
-            listeningElement.setAttribute('style', 'display:none;');
-            receivedElement.setAttribute('style', 'display:block;');
         });
 
-        push.on('error', function(e) {
-            console.log("push error = " + e.message);
-        });
 
-        push.on('notification', function(data) {
-            console.log('notification event');
-            navigator.notification.alert(
-                data.message,         // message
-                null,                 // callback
-                data.title,           // title
-                'Ok'                  // buttonName
-            );
-       });
+
     }
 };
