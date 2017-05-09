@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.surabibullionliteprabhu" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>Surabi_Push</name>
+<widget id="com.surabilitepush" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Surabi_Push_Test</name>
     <description>
         Push sample application that receives push notifications.
     </description>
@@ -19,7 +19,7 @@
 
         <plugin name="cordova-plugin-statusbar" source="npm" spec="~2.1.3" />
         <plugin name="phonegap-plugin-push" source="npm" spec="~1.8.0">
-            <variable name="SENDER_ID" value="322154966713" />
+            <variable name="SENDER_ID" value="677437474748" />
         </plugin>
         <plugin name="cordova-plugin-console" source="npm" spec="~1.0.3" />
         <plugin name="cordova-plugin-dialogs" source="npm" spec="~1.2.1" />
